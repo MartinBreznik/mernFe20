@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-//app.use(cors());
+app.use(cors());
 app.use('/students', studentRoute)
 
 
@@ -34,7 +34,6 @@ const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
 //app.options('*', cors());
-
 // 404 Error
 app.use((req, res, next) => {
   next(createError(404));

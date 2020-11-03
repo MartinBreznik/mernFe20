@@ -13,8 +13,6 @@ router.route('/create-student').post((req, res, next) => {
     } else {
       console.log(data)
       res.json(data)
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     }
   })
 });
@@ -25,8 +23,6 @@ router.route('/').get((req, res) => {
     if (error) {
       return next(error)
     } else {
-      //res.header("Access-Control-Allow-Origin", "*");
-      //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.json(data)
     }
   })
