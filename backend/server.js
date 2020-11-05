@@ -9,15 +9,22 @@ const studentRoute = require('./routes/student.route')
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.db, {
-  useNewUrlParser: true
-}).then(() => {
-  console.log('Database sucessfully connected!')
-},
-  error => {
-    console.log('Could not connect to database : ' + error)
+
+const options =  {
+  "user": dbConfig.user,
+  "pass": dbConfig.password,
+  "useNewUrlParser": true,
+  "useCreateIndex": true,
+  "useUnifiedTopology": true
+}; 
+mongoose.connect(
+  dbConfig.db, 
+  options,
+  (err) => {
+      if (!err) { console.log('MongoDB connection succeeded.'); }
+      else { console.log('Error in MongoDB connection : ' + JSON.stringify(err, undefined, 2)); }
   }
-)
+);
 
 const app = express();
 app.use(bodyParser.json());
