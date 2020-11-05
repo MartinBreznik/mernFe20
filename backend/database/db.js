@@ -1,6 +1,6 @@
 module.exports = {
-    db: 'mongodb+srv://Admin:fikus123@website.qoqbq.mongodb.net/CrudTest?retryWrites=true&w=majority',
-    user: 'Admin',
-    password: 'fikus123'
+    db: 'mongodb+srv://mongoUserName:mongoUserPassword@website.qoqbq.mongodb.net/mongoDatabaseName?retryWrites=true&w=majority',
+    user: 'mongoUserName',
+    password: 'mongoUserPassword'
   };
   //test= db: 'mongodb://localhost:27017/reactdb'
